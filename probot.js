@@ -3,7 +3,7 @@ const moment = require("moment");
 const fs = require("fs");      
 const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
-const Canvas = require("canvas"); //npm i canvas
+const Canvas = require("canvas"); //npm i canvas حمل بكج
 const prefix = "#" // برفكس
 let profile = JSON.parse(fs.readFileSync("profile.json", "utf8"))
 
@@ -226,15 +226,10 @@ client.on('message', message =>{
     }
 });
 client.on('ready', () => {
-  console.log('|===================================|');
-  console.log(`|  Users Size ${client.users.size}  |`);
-  console.log(`| Guilds Size ${client.guilds.size} |`);
-  console.log(`|===================================|`);
-  console.log(`|          ${client.user.tag}       |`);
-  console.log(`|===================================|`);
-  console.log(`|              Im Ready !           |`);
-  console.log(`|===================================|`);
+  console.log(`Logged in as ${client.user.tag}!`);
 });
+
+
 client.on('message', msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
@@ -824,4 +819,7 @@ message.channel.stopTyping()
 })
 }
 });
-client.login(process.env.TOKEN);// لا تغير فيها شيء
+client.login(process.env.BOT_TOKEN);//لاتعدل فيه شي ياقلبي
+
+
+//جميع الحقوق تعود ل Fras#9999 وشكرا
